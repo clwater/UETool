@@ -2,16 +2,20 @@
 
 buildscript {
     ext.versions = ['minSdk'        : 14,
-                    'targetSdk'     : 26,
-                    'compileSdk'    : 26,
-                    'buildTool'     : '26.0.1',
+                    'targetSdk'     : 25,
+                    'compileSdk'    : 25,
+                    'buildTool'     : '25.0.0',
 
-                    'supportLibrary': '27.1.1',
+                    'supportLibrary': '22.1.0',
                     'fresco'        : '1.4.0',
 
                     'release'       : '1.0.13',]
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -25,6 +29,10 @@ allprojects {
     repositories {
         jcenter()
         maven { url "https://maven.google.com" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 

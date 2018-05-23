@@ -19,7 +19,7 @@ import android.graphics.drawable.NinePatchDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.graphics.drawable.VectorDrawableCompat;
+//import android.support.graphics.drawable.VectorDrawableCompat;
 import android.text.SpannedString;
 import android.text.style.ImageSpan;
 import android.util.Pair;
@@ -197,12 +197,12 @@ public class Util {
                 }
             } else if (drawable instanceof StateListDrawable) {
                 return ((BitmapDrawable) drawable.getCurrent()).getBitmap();
-            } else if (drawable instanceof VectorDrawableCompat) {
-                Field mVectorStateField = VectorDrawableCompat.class.getDeclaredField("mVectorState");
-                mVectorStateField.setAccessible(true);
-                Field mCachedBitmapField = Class.forName("android.support.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState").getDeclaredField("mCachedBitmap");
-                mCachedBitmapField.setAccessible(true);
-                return (Bitmap) mCachedBitmapField.get(mVectorStateField.get(drawable));
+//            } else if (drawable instanceof VectorDrawableCompat) {
+//                Field mVectorStateField = VectorDrawableCompat.class.getDeclaredField("mVectorState");
+//                mVectorStateField.setAccessible(true);
+//                Field mCachedBitmapField = Class.forName("android.support.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState").getDeclaredField("mCachedBitmap");
+//                mCachedBitmapField.setAccessible(true);
+//                return (Bitmap) mCachedBitmapField.get(mVectorStateField.get(drawable));
             }
         } catch (Exception e) {
             e.printStackTrace();

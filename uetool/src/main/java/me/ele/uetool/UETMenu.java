@@ -50,7 +50,7 @@ public class UETMenu extends LinearLayout {
         windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
         vMenu = findViewById(R.id.menu);
-        vSubMenuContainer = findViewById(R.id.sub_menu_container);
+        vSubMenuContainer = (ViewGroup) findViewById(R.id.sub_menu_container);
         Resources resources = context.getResources();
         subMenus.add(new UETSubMenu.SubMenu(resources.getString(R.string.uet_catch_view), R.drawable.uet_edit_attr, new OnClickListener() {
             @Override
@@ -200,11 +200,11 @@ public class UETMenu extends LinearLayout {
     private WindowManager.LayoutParams getWindowLayoutParams() {
         params.width = FrameLayout.LayoutParams.WRAP_CONTENT;
         params.height = FrameLayout.LayoutParams.WRAP_CONTENT;
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
-        } else {
-            params.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
-        }
+//        } else {
+//            params.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+//        }
         params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
         params.format = PixelFormat.TRANSLUCENT;
         params.gravity = Gravity.TOP | Gravity.LEFT;

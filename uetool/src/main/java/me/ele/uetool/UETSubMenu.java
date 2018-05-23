@@ -32,8 +32,8 @@ public class UETSubMenu extends LinearLayout {
         setOrientation(VERTICAL);
         setPadding(padding, 0, padding, 0);
         setTranslationY(dip2px(2));
-        vImage = findViewById(R.id.image);
-        vTitle = findViewById(R.id.title);
+        vImage = (ImageView) findViewById(R.id.image);
+        vTitle = (TextView)findViewById(R.id.title);
     }
 
     public void update(SubMenu subMenu) {

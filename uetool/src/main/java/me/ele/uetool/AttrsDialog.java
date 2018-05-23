@@ -68,7 +68,7 @@ public class AttrsDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uet_dialog_attrs);
-        vList = findViewById(R.id.list);
+        vList = (RecyclerView) findViewById(R.id.list);
         vList.setAdapter(adapter);
         vList.setLayoutManager(layoutManager);
     }
@@ -260,7 +260,7 @@ public class AttrsDialog extends Dialog {
 
             public TitleViewHolder(View itemView) {
                 super(itemView);
-                vTitle = itemView.findViewById(R.id.title);
+                vTitle = (TextView) itemView.findViewById(R.id.title);
             }
 
             public static TitleViewHolder newInstance(ViewGroup parent) {
@@ -281,8 +281,8 @@ public class AttrsDialog extends Dialog {
 
             public TextViewHolder(View itemView) {
                 super(itemView);
-                vName = itemView.findViewById(R.id.name);
-                vDetail = itemView.findViewById(R.id.detail);
+                vName = (TextView) itemView.findViewById(R.id.name);
+                vDetail = (TextView) itemView.findViewById(R.id.detail);
             }
 
             public static TextViewHolder newInstance(ViewGroup parent) {
@@ -392,8 +392,8 @@ public class AttrsDialog extends Dialog {
 
             public EditTextViewHolder(View itemView) {
                 super(itemView);
-                vName = itemView.findViewById(R.id.name);
-                vDetail = itemView.findViewById(R.id.detail);
+                vName = (TextView) itemView.findViewById(R.id.name);
+                vDetail = (EditText)itemView.findViewById(R.id.detail);
                 vColor = itemView.findViewById(R.id.color);
                 vDetail.addTextChangedListener(textWatcher);
             }
@@ -471,8 +471,8 @@ public class AttrsDialog extends Dialog {
             public SwitchViewHolder(View itemView, final AttrDialogCallback callback) {
                 super(itemView);
 
-                vName = itemView.findViewById(R.id.name);
-                vSwitch = itemView.findViewById(R.id.switch_view);
+                vName = (TextView) itemView.findViewById(R.id.name);
+                vSwitch =(SwitchCompat) itemView.findViewById(R.id.switch_view);
                 vSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -526,9 +526,9 @@ public class AttrsDialog extends Dialog {
             public BitmapInfoViewHolder(View itemView) {
                 super(itemView);
 
-                vName = itemView.findViewById(R.id.name);
-                vImage = itemView.findViewById(R.id.image);
-                vInfo = itemView.findViewById(R.id.info);
+                vName = (TextView)itemView.findViewById(R.id.name);
+                vImage = (ImageView) itemView.findViewById(R.id.image);
+                vInfo = (TextView)itemView.findViewById(R.id.info);
             }
 
             public static BitmapInfoViewHolder newInstance(ViewGroup parent) {

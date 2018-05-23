@@ -31,21 +31,16 @@ android {
 
 dependencies {
     compile "com.android.support:appcompat-v7:${versions.supportLibrary}"
-    compile "com.android.support:design:${versions.supportLibrary}"
+    compile 'com.android.support:design:24.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile "com.facebook.fresco:fresco:${versions.fresco}"
     compile "com.facebook.fresco:animated-gif:${versions.fresco}"
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-
-    debugCompile project(':uetool')
-    debugCompile project(':uetool-fresco')
-    releaseCompile project(':uetool-no-op')
-//  debugCompile "me.ele:uetool:${versions.release}"
-//  debugCompile "me.ele:uetool-fresco:${versions.release}"
-//  releaseCompile "me.ele:uetool-no-op:${versions.release}"
-
+//    debugCompile "me.ele:uetool-fresco:${versions.release}"
+//    releaseCompile "me.ele:uetool-no-op:${versions.release}"
     configurations.all {
         resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
     }
+    debugCompile project(':uetool')
 }
